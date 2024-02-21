@@ -1,0 +1,129 @@
+.App {
+  text-align: center;
+  
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.news-card{
+  height: 20rem;
+  max-height: 20rem;
+  overflow: hidden;
+
+
+}
+
+.cus-btn{
+  visibility: hidden;
+  width: 90%;
+}
+
+.news-card:hover .cus-btn {
+  animation: fadeIn .2s linear; 
+  visibility: visible;
+}
+
+@keyframes fadeIn {
+ from{
+  translate: 0px -20px;
+ }
+ to{
+  translate: 0px 0px;
+ } 
+}
+
+
+
+.card-image{
+  max-height: 12.5rem;
+}
+
+.news-card:hover .card-image{
+  transform: scale(2.5);
+  animation: sliding 4s ease-out infinite;
+}
+
+@keyframes sliding {
+  from{
+    translate: -200px 100px ;
+  }
+  to{
+    translate: 80px 100px;
+  }
+  
+}
+.news-card:hover .card-body{
+  translate: 0px -5rem;
+  font-weight: bolder;
+  text-shadow:
+  0.07em 0 rgb(255, 255, 255),
+  0 0.07em rgb(255, 255, 255),
+  -0.07em 0 rgb(255, 255, 255),
+  0 -0.07em rgb(255, 255, 255);
+}
+
+.custom-dialog-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+.box{
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 31.25rem;
+  height: 15.625rem;
+  z-index: 10;
+  padding: 0.938rem 0.625rem;
+}
+
+.link-box{
+  width: 94%;
+  height: 30%;
+  border: 0;
+  padding: 1.50rem 0rem;
+}
