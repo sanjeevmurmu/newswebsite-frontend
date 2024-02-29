@@ -33,7 +33,7 @@ export class News extends Component {
 
    
     async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=c2eb919bb061453baaeec05d857b7501&page=1&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${process.env.REACT_APP_API_KEY}&page=1&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -47,7 +47,7 @@ export class News extends Component {
 
         }
         else {
-            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=c26f485692974687a72b11dcc7ebe448&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${process.env.REACT_APP_API_KEY}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
             // this.setState({loading:true});
             let data = await fetch(url);
             let parsedData = await data.json();
@@ -62,7 +62,7 @@ export class News extends Component {
 
     }
     handlePrivClick = async () => {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=c26f485692974687a72b11dcc7ebe448&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${process.env.REACT_APP_API_KEY}&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -87,7 +87,7 @@ export class News extends Component {
             // let currentDate = new Date().toJSON().slice(0, 10);
             // var d = new Date();
             // let previousDate= d.setDate(d.getDate() - 7);
-            let url = `https://newsapi.org/v2/everything?q=${selectedText}&apiKey=c2eb919bb061453baaeec05d857b7501&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+            let url = `https://newsapi.org/v2/everything?q=${selectedText}&apiKey=${process.env.REACT_APP_API_KEY}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
             this.setState({ loading: true });
             let data = await fetch(url);
             let parsedData = await data.json();
