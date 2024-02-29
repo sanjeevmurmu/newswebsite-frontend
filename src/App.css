@@ -97,16 +97,25 @@
 
 .custom-dialog-box{
   display: flex;
+  font-weight: bold;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  height: 200px;
+  text-align: center;
+  width: 250px;
+  height: 150px;
   position: absolute;
-  left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
+  border:#282c34 2px solid;
+  padding: 8px;
+  animation: fadeDialog 0.75s ease-in ;
+}
+@keyframes fadeDialog {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 
 .box{
@@ -119,6 +128,7 @@
   height: 15.625rem;
   z-index: 10;
   padding: 0.938rem 0.625rem;
+  animation: fadeDialog 0.75s ease-in ;
 }
 
 .link-box{

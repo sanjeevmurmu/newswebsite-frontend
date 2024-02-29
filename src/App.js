@@ -44,10 +44,8 @@ export default class App extends Component {
   render() {
     return (
       <>
-         <React.StrictMode>
         <Navbar />
     <RouterProvider router={router} />
-  </React.StrictMode>
                
       </>
     )

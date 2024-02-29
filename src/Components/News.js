@@ -27,6 +27,7 @@ export class News extends Component {
             page: 1,
             showDiv: false,
             headline: "News Headline",
+            style:{"bottom":0,"top":0,"left":0,"right":0}
         }
     }
 
@@ -105,8 +106,12 @@ export class News extends Component {
 
     handleMouseUp = () => {
         if (!window.getSelection().isCollapsed) {
-            console.log(window.getSelection().rangeCount)
             this.setState({ showDiv: true });
+            const rect=window.getSelection().getRangeAt(0).getBoundingClientRect();
+            const {bottom,top,left,right}=rect
+            const scrollY = window.scrollY;
+            this.setState({style:{"bottom":`${rect.height+bottom+scrollY}px`,"top":`${rect.height+top+scrollY}px`,"left":`${rect.width+left}px`,"right":`${rect.width+right}px`}})
+         
         }
 
     };
@@ -148,16 +153,16 @@ export class News extends Component {
 
                 </div>
 
-                {this.state.showDiv && <div className='bg-light text-primary custom-dialog-box'>
+                {this.state.showDiv && <div className='bg-light text-primary custom-dialog-box' style={this.state.style}>
                     <div className='d-flex flex-row justify-content-between gap-2 mb-3 align-items-center'>
-                        <div>NewsHead</div>
+               
                         <div>What do you want to do with selected text</div>
                         <button id='close' className='btn btn-light btn-close' onClick={this.handleDivClose}></button> </div>
 
                     <div className='d-flex flex-column gap-1 align-items-center'>
                         <button id="selection" className='btn btn-dark' onClick={() => {
                             this.handleSelection()
-                        }}>Search selectedText</button>
+                        }}>Search Text</button>
                         <button id="copy" className='btn btn-dark' onClick={this.handleCopy}>Copy text</button>
                     </div>
 
