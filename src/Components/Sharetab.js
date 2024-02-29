@@ -8,7 +8,7 @@ export default class Sharetab extends Component {
 
 
   render() {
-    const {newsUrl,handler,shortUrl}=this.props
+    const {handler,shortUrl}=this.props
 
     
     

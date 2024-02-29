@@ -39,7 +39,7 @@ export class NewsItem extends Component {
 
         return (
             <>
-            {this.state.shareModal && <Sharetab newsUrl={newsUrl} handler={this.handler} shortUrl={this.state.shortUrl}/>}
+            {this.state.shareModal && <Sharetab  handler={this.handler} shortUrl={this.state.shortUrl}/>}
             <div className='my-3'>
                 <div className="card position-relative news-card" >
                     <img src={!imageUrl ? imageUrl="https://thumbs.dreamstime.com/b/house-not-available-white-background-sign-label-flat-style-201430826.jpg":imageUrl } className="card-img-top card-image" alt="..."/>
